@@ -1,0 +1,11 @@
+jupyterlab
+SQLAlchemy
+PyMySQL
+pandas
+geopandas
+scikit-learn
+joblib
+matplotlib
+seaborn
+h3
+shapely
