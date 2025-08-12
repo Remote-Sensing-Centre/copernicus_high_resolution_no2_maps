@@ -18,7 +18,9 @@ python -m venv no2predictrfvenv
 pip install -r requirements.txt
 ```
 
-5. Run Jupyter to open the notebook files:
+5. Download data files from the [data repository](https://igikedupl-my.sharepoint.com/:f:/g/personal/konrad_wroblewski_igik_edu_pl/EnYfqpWu4QdAgoqeYczef7EBzU4ocOp5rrZ3vwNQqHy7ZQ?e=3rvnPK) and place them in **data** catalog.
+
+6. Run Jupyter to open the notebook files:
 ``` bash
 jupyter lab
 ```
