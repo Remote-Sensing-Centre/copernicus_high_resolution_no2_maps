@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def correlation_matrix_heatmap(df, output_file=None, identifier=None):
+def correlation_matrix_heatmap(df, output_file=None, identifier=None, annotate=True):
     corr_matrix = df.corr(numeric_only=True)
     plt.figure(figsize=(10, 8), dpi=300)
 
-    sns.heatmap(corr_matrix, annot=True, fmt=".2f", cmap="coolwarm",
+    sns.heatmap(corr_matrix, annot=annotate, fmt=".2f", cmap="coolwarm",
             square=True, linewidths=0.5, cbar_kws={"shrink": 0.5}, vmin=-1, vmax=1)
 
     plot_title = "Correlation matrix heatmap"
