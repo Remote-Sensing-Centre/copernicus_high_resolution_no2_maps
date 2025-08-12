@@ -9,3 +9,6 @@ matplotlib
 seaborn
 h3
 shapely
+rioxarray
+rasterio
+rasterstats
