@@ -1,2 +1,5 @@
 data/*.csv
 data/*.pkl
+/1 - Data preparation/.ipynb_checkpoints
+/2 - Model training/.ipynb_checkpoints
+/3 - Testing/.ipynb_checkpoints
