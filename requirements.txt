@@ -12,3 +12,5 @@ shapely
 rioxarray
 rasterio
 rasterstats
+shap
+ipywidgets
