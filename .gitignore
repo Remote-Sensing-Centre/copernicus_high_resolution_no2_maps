@@ -7,3 +7,9 @@ data/*.pkl
 /2 - Model training/__pycache__
 *.png
 *.zip
+*.csv
+*.cpg
+*.dbf
+*.prj
+*.shp
+*.shx
