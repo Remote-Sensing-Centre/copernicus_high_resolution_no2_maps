@@ -26,3 +26,12 @@ To fully replicate the spatial data merging, weighting, and preprocessing steps 
 cd %HOMEPATH%
 python -m venv no2predictrfvenv
 %HOMEPATH%\no2predictrfvenv\Scripts\activate
+
+3. Clone this repository and unpack it. In the terminal window change the active directory to the main directory of repository.  
+Install requirements:  
+Bash
+pip install -r requirements.txt
+4. Download data files from the data repository and place them in data catalog.  
+5. Run Jupyter to open the notebook files:  
+Bash
+jupyter lab
