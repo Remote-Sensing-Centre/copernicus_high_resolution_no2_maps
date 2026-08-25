@@ -24,7 +24,7 @@ Two levels of reproducibility are provided.
 
 The Random Forest modelling workflow can be reproduced using the fully pre-processed datasets available in the data repository.
 
-### Required datasets
+#### Required datasets
 
 Download the following files from the SharePoint data repository:
 
@@ -37,7 +37,7 @@ Download the following files from the SharePoint data repository:
 - `NO2_test_dataset_osm_8269826_hex_9_year_2023_2024.csv`  
   Independent test dataset used to evaluate model inference at the finer H3 resolution 9 grid.
 
-### Model reproduction
+#### Model reproduction
 
 Run:
 
@@ -69,7 +69,7 @@ The preprocessing workflow includes:
 - generation of artificial non-urban reference points;
 - preparation of the final machine-learning datasets.
 
-### Database setup
+#### Database setup
 
 1. Download the required source data from the data repository.
 2. Import the provided source tables into a relational SQL database.
@@ -83,7 +83,20 @@ A database management application such as DBeaver can be used to manage the rela
 
 ---
 
-## Windows Setup
+## Validation Strategy
+
+The modelling workflow distinguishes between internal validation and independent spatial testing.
+
+- Data from five ground monitoring stations were used for model development.
+- These observations were divided into **70% training data and 30% internal validation data** using concentration-stratified sampling.
+- Hyperparameter optimisation was performed using **5-fold cross-validation**.
+- A sixth monitoring station was completely excluded from model development and used exclusively as an **independent spatial hold-out test station**.
+
+This design allows both conventional internal model validation and evaluation of spatial transferability to an unseen monitoring location.
+
+---
+
+## Setup for Windows
 
 ### 1. Install Python
 
@@ -97,3 +110,52 @@ Open Command Prompt and run:
 cd %HOMEPATH%
 python -m venv no2predictrfvenv
 %HOMEPATH%\no2predictrfvenv\Scripts\activate
+```
+
+### 3. Download the repository
+
+Clone or download this GitHub repository and change the working directory to the repository folder.
+
+Install the required Python packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Download the datasets
+
+Download the required datasets from the SharePoint data repository and place them in the appropriate local data directory used by the notebooks.
+
+### 5. Start JupyterLab
+
+```bash
+jupyter lab
+```
+
+Open the required notebook and run the cells in sequence.
+
+---
+
+## Study Area and Data Sources
+
+The workflow was developed for estimating ground-level NO₂ concentrations in the Górnośląsko-Zagłębiowska Metropolis (GZM), Poland, using data from 2023–2024.
+
+The methodology integrates data from:
+
+- Sentinel-5P TROPOMI;
+- Copernicus Land Monitoring Service;
+- Global Human Settlement Layer;
+- ERA5-Land;
+- Landsat 8/9;
+- GIOŚ ground-based air-quality monitoring stations;
+- GDDKiA road traffic measurements.
+
+---
+
+## Repository Purpose
+
+The repository accompanies the study:
+
+**“Assessing the importance of environmental predictors in estimating ground-level NO₂ concentrations using combined satellite and in situ data.”**
+
+Its purpose is to provide the code and documentation necessary to reproduce the machine-learning workflow and to clarify the relationship between the source data, processed datasets, model training, validation, testing, and interpretation steps.
